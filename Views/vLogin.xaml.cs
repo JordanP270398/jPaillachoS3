@@ -2,10 +2,17 @@ namespace jPaillachoS3.Views;
 
 public partial class vLogin : ContentPage
 {
-    string usuario, contrasena;
+    string usuario = " ", contrasena = " ";
     public vLogin()
     {
         InitializeComponent();
+    }
+
+    public vLogin(string usuarioNuevo, string contrasenaNueva)
+    {
+        InitializeComponent();
+        usuario = usuarioNuevo;
+        contrasena = contrasenaNueva;
     }
 
     private void btnIniciarSesion_Clicked(object sender, EventArgs e)
@@ -17,7 +24,7 @@ public partial class vLogin : ContentPage
 
             if (usuarioIngreso == usuario && contrasenaIngreso == contrasena)
             {
-                Navigation.PushAsync(new vReporte());
+                Navigation.PushAsync(new vReporte(usuario));
             }
             else
             {
@@ -31,18 +38,9 @@ public partial class vLogin : ContentPage
         }
     }
 
-    private void btnIniciarSesion_Clicked_1(object sender, EventArgs e)
-    {
-
-    }
-
     private void btnRegistrar_Clicked(object sender, EventArgs e)
     {
-
+        Navigation.PushAsync(new vRegistro());
     }
 
-    private void btnRegistrar_Clicked_1(object sender, EventArgs e)
-    {
-
-    }
 }

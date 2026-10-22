@@ -2,8 +2,9 @@ namespace jPaillachoS3.Views;
 
 public partial class vReporte : ContentPage
 {
-	public vReporte()
-	{
-		InitializeComponent();
-	}
+    public vReporte(string usuario)
+    {
+        InitializeComponent();
+        DisplayAlertAsync("Bienvenido", usuario, "Cerrar");
+    }
 }
